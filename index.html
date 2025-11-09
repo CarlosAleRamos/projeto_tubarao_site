@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Projeto Tubarão - Conservação e Pesquisa</title>
+    
+    <!-- 
+      Link para o arquivo de estilo 
+      *************************************************************************
+      ** ATENÇÃO: CAMINHO ATUALIZADO **
+      O estilo agora está dentro da pasta 'assets/css/'
+      *************************************************************************
+    -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Importa a fonte 'Inter' do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Cabeçalho e Navegação -->
+    <header>
+        <div class="container">
+            <!-- LOGO: Altere o texto do logo aqui -->
+            <a href="index.html" class="logo">Projeto Tubarão</a>
+            <nav>
+                <ul>
+                    <!-- 
+                      LINKS DE NAVEGAÇÃO: 
+                      Altere o texto (ex: "Home") e o link (ex: "index.html") para cada item.
+                      A classe "active" marca a página atual.
+                    -->
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="projetos.html">Nossos Projetos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="apoie.html">Como Ajudar</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 
+          SEÇÃO HERO (BANNER PRINCIPAL): 
+          - O vídeo de fundo desta seção é adicionado abaixo.
+          - O texto e o botão ficam na div "hero-content".
+        -->
+        <section class="hero">
+            
+            <!-- VÍDEO DE FUNDO HTML5 -->
+            <video autoplay muted loop playsinline class="hero-video-background">
+                <!-- 
+                  ATENÇÃO: CAMINHO ATUALIZADO
+                  O vídeo agora está dentro da pasta 'assets/videos/'
+                -->
+                <source src="assets/videos/videoplayback.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+            
+            <div class="hero-content">
+                <!-- TEXTO DO BANNER: Altere o título e o parágrafo abaixo -->
+                <h1>Conservação e Pesquisa de Tubarões e Raias no Brasil</h1>
+                <p>Nossa missão é proteger a vida marinha através da ciência e educação.</p>
+                
+                <!-- BOTÃO DO BANNER: Altere o texto e o link (href) -->
+                <a href="projetos.html" class="cta-button">Conheça Nossos Projetos</a>
+            </div>
+        </section>
+
+        <!-- Seção "Sobre Nós" (Breve) -->
+        <section id="about-preview" class="container section-padding">
+            <!-- TÍTULO DA SEÇÃO: Altere o título -->
+            <h2>Sobre o Projeto</h2>
+            
+            <!-- TEXTO DA SEÇÃO: Altere o parágrafo -->
+            <p>O Projeto Tubarão é focado na pesquisa científica, educação ambiental e conservação de tubarões e raias no Brasil. Nosso objetivo é divulgar pesquisas, educar o público e garantir o futuro dessas espécies essenciais.</p>
+            
+            <!-- BOTÃO DA SEÇÃO: Altere o texto e o link (href) -->
+            <a href="sobre.html" class="cta-button-secondary">Saiba Mais</a>
+        </section>
+
+        <!-- Seção "Destaques dos Projetos" -->
+        <section id="projects-preview" class="section-padding section-bg">
+            <div class="container">
+                <!-- TÍTULO DA SEÇÃO -->
+                <h2>Destaques dos Projetos</h2>
+                <div class="project-grid">
+                    
+                    <!-- Item de Projeto 1: Altere a imagem (src), título (h3) e texto (p) -->
+                    <div class="project-card">
+                        <!-- IMAGEM DO CARD: Troque 'src' pela sua imagem. (Ideal: 600x400 pixels) -->
+                        <img src="https://placehold.co/600x400/003366/FFFFFF?text=Pesquisa" alt="Foto do projeto de pesquisa">
+                        <h3>Pesquisa Científica</h3>
+                        <p>Monitoramento de populações, marcação e estudos comportamentais.</p>
+                    </div>
+                    
+                    <!-- Item de Projeto 2: Altere a imagem (src), título (h3) e texto (p) -->
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/007BFF/FFFFFF?text=Educação" alt="Foto do projeto de educação">
+                        <h3>Educação Ambiental</h3>
+                        <p>Palestras em escolas e workshops com comunidades costeiras.</p>
+                    </div>
+                    
+                    <!-- Item de Projeto 3: Altere a imagem (src), título (h3) e texto (p) -->
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/0055A4/FFFFFF?text=Políticas" alt="Foto do projeto de políticas públicas">
+                        <h3>Políticas Públicas</h3>
+                        <p>Trabalho junto a órgãos governamentais para criar áreas de proteção.</p>
+                    </div>
+                    
+                    <!-- PARA ADICIONAR UM VÍDEO (Exemplo comentado):
+                    Você pode adicionar um vídeo do YouTube no lugar de um project-card 
+                    ou dentro de uma nova seção. Use o código de "incorporar" do YouTube:
+                    
+                    <div class="project-card video-card">
+                        <iframe 
+                            width="100%" 
+                            height="200" 
+                            src="https://www.youtube.com/embed/SEU-CODIGO-DO-VIDEO" 
+                            title="Título do Vídeo" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <h3>Título do Vídeo</h3>
+                        <p>Descrição curta do seu vídeo.</p>
+                    </div>
+                    -->
+                    
+                </div>
+                <!-- BOTÃO DA SEÇÃO: Altere o texto e o link (href) -->
+                <a href="projetos.html" class="cta-button">Ver todos os projetos</a>
+            </div>
+        </section>
+
+        <!-- Seção "Blog" (Breve) -->
+        <section id="blog-preview" class="container section-padding">
+            <!-- TÍTULO DA SEÇÃO -->
+            <h2>Últimas Notícias</h2>
+            
+            <!-- Item de Blog 1: Altere o título, texto e link (href) -->
+            <div class="blog-preview-item">
+                <h3>Nova expedição de marcação no litoral de SP</h3>
+                <p>Nossa equipe iniciou o trabalho de campo... <a href="blog.html">Leia mais</a></p>
+            </div>
+            
+            <!-- Item de Blog 2: Altere o título, texto e link (href) -->
+            <div class="blog-preview-item">
+                <h3>Artigo publicado sobre o tubarão-martelo</h3>
+                <p>Resultados da nossa pesquisa foram aceitos em... <a href="blog.html">Leia mais</a></p>
+            </div>
+            
+            <!-- BOTÃO DA SEÇÃO: Altere o texto e o link (href) -->
+            <a href="blog.html" class="cta-button-secondary">Visitar o Blog</a>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <!-- TEXTO DO RODAPÉ: Altere o texto de copyright -->
+            <p>&copy; 2025 Projeto Tubarão. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <!-- LINKS SOCIAIS: Altere o link (href) para seu Instagram -->
+                <a href="https://www.instagram.com/projetotubarao/" target="_blank">Instagram</a>
+                <!-- Adicione outros links se necessário, ex: <a href="#">Facebook</a> -->
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
