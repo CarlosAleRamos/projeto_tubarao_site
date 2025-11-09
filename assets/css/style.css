@@ -62,8 +62,6 @@ header .container {
     color: var(--primary-blue);
 }
 
-/* Removido: .logo img { ... } */
-
 nav {
     display: flex;
 }
@@ -445,6 +443,66 @@ footer .container {
     margin: 0;
 }
 
+/* MUDANÇA: Faz o card da equipe transparente na seção escura */
+.section-dark .team-member-card {
+    background-color: transparent; /* Remove o "quadrado branco" */
+    box-shadow: none; /* Remove a sombra desnecessária */
+}
+.section-dark .team-member-card h3 {
+    color: var(--white); /* Muda o nome para branco */
+}
+.section-dark .team-member-card p {
+    color: var(--white); /* Muda a descrição para branco */
+    opacity: 0.8; /* Deixa um pouco mais suave */
+}
+.section-dark .team-member-card img {
+    border-color: rgba(255, 255, 255, 0.25); /* Borda branca sutil */
+}
+
+
+/* ==========================================================================
+  MUDANÇA: EFEITO PARALLAX DINÂMICO
+==========================================================================
+*/
+.parallax-section {
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.parallax-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.parallax-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px; 
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    z-index: 2; /* Fica acima do overlay escuro */
+}
+.parallax-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--white);
+    max-width: 700px;
+    line-height: 1.4;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+
 /* ==========================================================================
   ESTILOS - PÁGINA DE PROJETOS
 ==========================================================================
@@ -673,4 +731,14 @@ footer .container {
 }
 .form-group button {
     cursor: pointer;
+}
+
+/* ==========================================================================
+  MUDANÇA: Correção do Parallax no Mobile
+==========================================================================
+*/
+@media (max-width: 768px) {
+    .parallax-section {
+        background-attachment: scroll; /* Desativa o 'fixed' no mobile */
+    }
 }
