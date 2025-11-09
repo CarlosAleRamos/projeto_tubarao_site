@@ -1,29 +1,26 @@
-<!DOCTYPE html>
+</html><!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- TÍTULO DA PÁGINA: Altere o título da aba -->
     <title>Como Ajudar - Projeto Tubarão</title>
-    
-    <!-- Link para o arquivo de estilo -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Importa a fonte 'Inter' do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Cabeçalho e Navegação -->
     <header>
         <div class="container">
-            <a href="index.html" class="logo">Projeto Tubarão</a>
+            <!-- REVERSÃO: Logo de volta ao texto -->
+            <a href="index.html" class="logo">
+                Projeto Tubarão
+            </a>
+            <!-- MUDANÇA: Botão Hambúrguer para mobile -->
+            <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Menu"></button>
             <nav>
                 <ul>
-                    <!-- NAVEGAÇÃO: Note que a classe "active" mudou para "Como Ajudar" -->
                     <li><a href="index.html">Home</a></li>
                     <li><a href="sobre.html">Sobre Nós</a></li>
                     <li><a href="projetos.html">Nossos Projetos</a></li>
@@ -37,75 +34,56 @@
 
     <main>
         <!-- Cabeçalho da Página -->
-        <section class="page-header section-bg">
+        <!-- MUDANÇA: Adicionada classe .section-dark para quebrar o branco -->
+        <section class="page-header section-dark">
             <div class="container">
                 <h1>Como Ajudar</h1>
-                <p>Sua ajuda é fundamental para a sobrevivência dos tubarões e raias.</p>
+                <p>Sua ajuda é fundamental para que nosso trabalho continue avançando.</p>
             </div>
         </section>
 
         <!-- Grade de Formas de Apoio -->
-        <section class="container section-padding">
-            <div class="support-grid">
-                
-                <!-- Card 1: Doações -->
-                <div class="support-card">
-                    <!-- ÍCONE: Exemplo com placeholder, mas idealmente use um SVG ou FontAwesome -->
-                    <img src="https://placehold.co/100x100/007BFF/FFFFFF?text=PIX" alt="Ícone de Doação" class="support-icon">
+        <section class="section-padding">
+            <div class="container">
+                <div class="support-grid">
                     
-                    <!-- TÍTULO DA FORMA DE APOIO -->
-                    <h2>Faça uma Doação</h2>
-                    
-                    <!-- TEXTO DE APOIO: Altere o parágrafo -->
-                    <p>Sua doação direta financia nossas expedições de pesquisa, compra de equipamentos de marcação e materiais educativos. Cada real faz a diferença.</p>
-                    
-                    <!-- EXEMPLO: Chave PIX (ou link para PagSeguro/PayPal) -->
-                    <div class="donation-info">
-                        <strong>Nossa chave PIX (CNPJ):</strong>
-                        <p>XX.XXX.XXX/0001-XX</p>
+                    <!-- Card 1: Doação -->
+                    <div class="support-card">
+                        <!-- REVERSÃO: Imagem de placeholder -->
+                        <img class="support-icon" src="https://placehold.co/80x80/007BFF/FFFFFF?text=PIX" alt="Ícone de doação">
+                        <h2 class="section-title">Faça uma Doação</h2>
+                        <p>Sua contribuição financia diretamente nossas expedições de pesquisa, compra de equipamentos e material educativo.</p>
+                        <div class="donation-info">
+                            <strong>Nossa chave PIX (CNPJ):</strong>
+                            <p>00.123.456/0001-00</p>
+                        </div>
+                        <a href="#" class="cta-button">Doar com Cartão (Em Breve)</a>
                     </div>
-                    
-                    <!-- BOTÃO DE AÇÃO: Altere o link (href) para sua plataforma de doação -->
-                    <a href="#" class="cta-button">Doar com Cartão (Ex: PayPal)</a>
-                </div>
-                <!-- Fim do Card 1 -->
 
-                <!-- Card 2: Voluntariado -->
-                <div class="support-card">
-                    <img src="https://placehold.co/100x100/0055A4/FFFFFF?text=Voluntário" alt="Ícone de Voluntariado" class="support-icon">
-                    
-                    <!-- TÍTULO DA FORMA DE APOIO -->
-                    <h2>Seja Voluntário</h2>
-                    
-                    <!-- TEXTO DE APOIO: Altere o parágrafo -->
-                    <p>Temos programas de voluntariado para estudantes e profissionais de biologia, comunicação e design. Ajude em campo ou remotamente na divulgação científica.</p>
-                    
-                    <!-- BOTÃO DE AÇÃO: Altere o link (href) para um formulário ou e-mail -->
-                    <a href="contato.html" class="cta-button-secondary">Ver Vagas de Voluntariado</a>
-                </div>
-                <!-- Fim do Card 2 -->
+                    <!-- Card 2: Voluntariado -->
+                    <div class="support-card">
+                        <!-- REVERSÇÃO: Imagem de placeholder -->
+                        <img class="support-icon" src="https://placehold.co/80x80/007BFF/FFFFFF?text=Mão" alt="Ícone de voluntariado">
+                        <h2 class="section-title">Seja Voluntário</h2>
+                        <p>Biólogos, oceanógrafos, designers e comunicadores. Temos espaço para todos que amam o oceano. Veja nossas vagas abertas.</p>
+                        <a href="contato.html" class="cta-button-secondary">Entre em Contato</a>
+                    </div>
 
-                <!-- Card 3: Loja (Opcional) -->
-                <div class="support-card">
-                    <img src="https://placehold.co/100x100/003366/FFFFFF?text=Loja" alt="Ícone de Loja" class="support-icon">
-                    
-                    <!-- TÍTULO DA FORMA DE APOIO -->
-                    <h2>Compre em nossa Loja</h2>
-                    
-                    <!-- TEXTO DE APOIO: Altere o parágrafo -->
-                    <p>Visite nossa loja parceira e compre camisetas, ecobags e adesivos. 100% do lucro é revertido diretamente para nossos projetos de conservação.</p>
-                    
-                    <!-- BOTÃO DE AÇÃO: Altere o link (href) para sua loja -->
-                    <a href="#" class="cta-button-secondary">Visitar a Loja</a>
-                </div>
-                <!-- Fim do Card 3 -->
+                    <!-- Card 3: Loja -->
+                    <div class="support-card">
+                        <!-- REVERSÃO: Imagem de placeholder -->
+                        <img class="support-icon" src="https://placehold.co/80x80/007BFF/FFFFFF?text=Loja" alt="Ícone de loja">
+                        <h2 class="section-title">Compre em nossa Loja</h2>
+                        <p>Todo o lucro da nossa loja (camisetas, ecobags, e mais) é 100% revertido para os projetos de campo.</p>
+                        <a href="#" class="cta-button-secondary">Visitar Loja (Em Breve)</a>
+                    </div>
 
+                </div>
             </div>
         </section>
-        
+
     </main>
 
-    <!-- Rodapé (O mesmo de sempre) -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Projeto Tubarão. Todos os direitos reservados.</p>
@@ -115,5 +93,6 @@
         </div>
     </footer>
 
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

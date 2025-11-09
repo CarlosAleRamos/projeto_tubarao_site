@@ -3,34 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- TÍTULO DA PÁGINA: Altere o título da aba -->
     <title>Sobre Nós - Projeto Tubarão</title>
-    
-    <!-- 
-      Link para o arquivo de estilo 
-      *************************************************************************
-      ** ATENÇÃO: CAMINHO ATUALIZADO **
-      O estilo agora está dentro da pasta 'assets/css/'
-      *************************************************************************
-    -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Importa a fonte 'Inter' do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Cabeçalho e Navegação -->
     <header>
         <div class="container">
-            <!-- LOGO: O mesmo da index -->
-            <a href="index.html" class="logo">Projeto Tubarão</a>
+            <!-- REVERSÃO: Logo de volta ao texto -->
+            <a href="index.html" class="logo">
+                Projeto Tubarão
+            </a>
+            <!-- MUDANÇA: Botão Hambúrguer para mobile -->
+            <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Menu"></button>
             <nav>
                 <ul>
-                    <!-- NAVEGAÇÃO: Note que a classe "active" mudou para "Sobre Nós" -->
                     <li><a href="index.html">Home</a></li>
                     <li><a href="sobre.html" class="active">Sobre Nós</a></li>
                     <li><a href="projetos.html">Nossos Projetos</a></li>
@@ -43,69 +33,62 @@
     </header>
 
     <main>
-        <!-- Cabeçalho da Página (Um banner mais simples que o hero) -->
-        <section class="page-header section-bg">
+        <!-- Cabeçalho da Página -->
+        <!-- MUDANÇA: Adicionada classe .section-dark para quebrar o branco -->
+        <section class="page-header section-dark">
             <div class="container">
-                <h1>Sobre o Projeto Tubarão</h1>
+                <h1>Sobre Nós</h1>
             </div>
         </section>
 
-        <!-- Seção "Nossa Missão e Visão" -->
-        <section class="container section-padding content-section">
-            <!-- TÍTULO DA SEÇÃO: Altere o título -->
-            <h2>Nossa Missão e Visão</h2>
-            
-            <!-- TEXTO DA SEÇÃO: Altere os parágrafos -->
-            <p><strong>Missão:</strong> Nossa missão é promover a conservação de tubarões e raias no Brasil através da pesquisa científica de ponta, da educação ambiental engajadora e da formulação de políticas públicas eficazes. Acreditamos que o conhecimento é a chave para a proteção.</p>
-            <p><strong>Visão:</strong> Nossa visão é um futuro onde as populações de tubarões e raias prosperam em ecossistemas marinhos saudáveis, e onde a sociedade brasileira reconhece e valoriza a importância desses animais para o oceano e para o planeta.</p>
-        </section>
-
-        <!-- Seção "Nossa História" -->
-        <section class="container section-padding content-section section-bg">
-            <!-- TÍTULO DA SEÇÃO: Altere o título -->
-            <h2>Nossa História</h2>
-            
-            <!-- TEXTO DA SEÇÃO: Altere o parágrafo -->
-            <p>O Projeto Tubarão nasceu em 2015, da inquietação de um grupo de biólogos marinhos preocupados com o declínio alarmante das populações de tubarões no litoral brasileiro. O que começou como um pequeno grupo de monitoramento voluntário cresceu e se tornou uma das principais referências em pesquisa e conservação de elasmobrânquios no país...</p>
-            <!-- Adicione mais parágrafos <p> aqui conforme necessário -->
+        <!-- Seção de Conteúdo "Nossa Missão" -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="content-section">
+                    <h2 class="section-title">Nossa Missão</h2>
+                    <p>
+                        Acreditamos que a ciência é a base para a conservação. Nossa missão é produzir conhecimento científico de ponta sobre tubarões e raias, traduzindo esses dados em ações práticas de educação ambiental e subsídios para políticas públicas que garantam a proteção dos ambientes marinhos.
+                    </p>
+                    <p>
+                        Fundado em 2010, o Projeto Tubarão nasceu da urgência em proteger espécies ameaçadas pela pesca predatória e pela degradação de seus habitats no litoral brasileiro.
+                    </p>
+                </div>
+            </div>
         </section>
 
         <!-- Seção "Nossa Equipe" -->
-        <section id="team" class="container section-padding">
-            <!-- TÍTULO DA SEÇÃO -->
-            <h2>Nossa Equipe</h2>
-            <div class="team-grid">
-                
-                <!-- Membro da Equipe 1: Altere a imagem (src), nome (h3) e cargo (p) -->
-                <div class="team-member-card">
-                    <!-- IMAGEM DO MEMBRO: Troque 'src'. (Ideal: 400x400 pixels, quadrada) -->
-                    <img src="https://placehold.co/400x400/003366/FFFFFF?text=Foto+Equipe" alt="Foto de um membro da equipe">
-                    <h3>Dr. Nome Sobrenome</h3>
-                    <p>Fundador e Coordenador de Pesquisa</p>
+        <!-- MUDANÇA: Adicionada classe .section-dark para quebrar o branco -->
+        <section class="section-padding section-dark">
+            <div class="container">
+                <h2 class="section-title">Nossa Equipe</h2>
+                <div class="team-grid">
+                    <!-- Membro 1 -->
+                    <div class="team-member-card">
+                        <!-- REVERSÃO: Imagem de placeholder -->
+                        <img src="https://placehold.co/250x250/007BFF/FFFFFF?text=Equipe" alt="Foto da Dra. Ana Costa">
+                        <h3>Dra. Ana Costa</h3>
+                        <p>Bióloga Marinha - Fundadora e Coordenadora</p>
+                    </div>
+                    <!-- Membro 2 -->
+                    <div class="team-member-card">
+                        <!-- REVERSÃO: Imagem de placeholder -->
+                        <img src="https://placehold.co/250x250/007BFF/FFFFFF?text=Equipe" alt="Foto do Dr. Pedro Santos">
+                        <h3>Dr. Pedro Santos</h3>
+                        <p>Oceanógrafo - Coordenador de Pesquisa</p>
+                    </div>
+                    <!-- Membro 3 -->
+                    <div class="team-member-card">
+                        <!-- REVERSÃO: Imagem de placeholder -->
+                        <img src="https://placehold.co/250x250/007BFF/FFFFFF?text=Equipe" alt="Foto da Maria Silva">
+                        <h3>Maria Silva</h3>
+                        <p>Educadora Ambiental - Coordenadora de Educação</p>
+                    </div>
                 </div>
-                
-                <!-- Membro da Equipe 2: Altere a imagem (src), nome (h3) e cargo (p) -->
-                <div class="team-member-card">
-                    <img src="https://placehold.co/400x400/007BFF/FFFFFF?text=Foto+Equipe" alt="Foto de um membro da equipe">
-                    <h3>Msc. Nome Sobrenome</h3>
-                    <p>Coordenadora de Educação Ambiental</p>
-                </div>
-                
-                <!-- Membro da Equipe 3: Altere a imagem (src), nome (h3) e cargo (p) -->
-                <div class="team-member-card">
-                    <img src="https://placehold.co/400x400/0055A4/FFFFFF?text=Foto+Equipe" alt="Foto de um membro da equipe">
-                    <h3>Nome Sobrenome</h3>
-                    <p>Técnico de Campo</p>
-                </div>
-
-                <!-- Adicione mais membros copiando o bloco <div class="team-member-card"> -->
-                
             </div>
         </section>
 
     </main>
 
-    <!-- Rodapé (O mesmo da index) -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Projeto Tubarão. Todos os direitos reservados.</p>
@@ -115,5 +98,6 @@
         </div>
     </footer>
 
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -12,8 +12,7 @@
     --light-bg: #f8f9fa;
     --white: #FFFFFF;
     --text-color: #333;
-    --header-height: 80px;
-    /* Altura do cabeçalho */
+    --header-height: 80px; /* Altura do cabeçalho */
 }
 
 body {
@@ -28,10 +27,13 @@ body {
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1rem; /* Adiciona o espaçamento lateral (corrige bug mobile) */
 }
 
-/* --- Cabeçalho e Navegação --- */
+/* ==========================================================================
+  Cabeçalho e Navegação
+==========================================================================
+*/
 header {
     background-color: var(--white);
     height: var(--header-height);
@@ -40,7 +42,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     display: flex;
     align-items: center;
 }
@@ -52,11 +54,18 @@ header .container {
     width: 100%;
 }
 
+/* REVERSÃO: Estilo da Logo como Texto */
 .logo {
+    text-decoration: none;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-blue);
-    text-decoration: none;
+}
+
+/* Removido: .logo img { ... } */
+
+nav {
+    display: flex;
 }
 
 nav ul {
@@ -72,6 +81,7 @@ nav a {
     color: var(--text-color);
     font-weight: 600;
     transition: color 0.3s ease;
+    padding: 0.5rem 0;
 }
 
 nav a:hover,
@@ -83,28 +93,39 @@ main {
     padding-top: var(--header-height);
 }
 
-/* --- Seção Hero --- */
+/* Botão do Menu Mobile (Hambúrguer) */
+.mobile-nav-toggle {
+    display: none; /* Escondido no desktop */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--primary-blue);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+
+/* ==========================================================================
+  Seção Hero
+==========================================================================
+*/
 .hero {
     height: 60vh;
     min-height: 400px;
-
+    
     position: relative;
-    overflow: hidden;
-    /* Garante que o vídeo não "vaze" */
+    overflow: hidden; /* Garante que o vídeo não "vaze" */
 
-    background-color: var(--primary-blue);
-    /* Cor de fallback caso o vídeo não carregue */
+    background-color: var(--primary-blue); /* Cor de fallback caso o vídeo não carregue */
     background-size: cover;
-    display: flex;
-    /* Adicionado para centralizar */
-    justify-content: center;
-    /* Adicionado para centralizar */
+    display: flex; /* Adicionado para centralizar */
+    justify-content: center; /* Adicionado para centralizar */
     align-items: center;
     text-align: center;
     color: var(--white);
 }
 
-/* NOVO: Estilo para o vídeo de fundo */
 .hero-video-background {
     position: absolute;
     top: 50%;
@@ -115,12 +136,8 @@ main {
     width: auto;
     height: auto;
     object-fit: cover;
-    /* Garante que o vídeo cubra tudo, sem distorcer */
     z-index: 1;
-    /* Fica na camada 1 */
 }
-
-/* NOVO: Overlay (filtro escuro) sobre o vídeo para legibilidade */
 .hero::before {
     content: '';
     position: absolute;
@@ -129,24 +146,18 @@ main {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* O filtro escuro */
     z-index: 2;
-    /* Fica na camada 2 (acima do vídeo) */
 }
-
 .hero-content {
     max-width: 800px;
     padding: 2rem;
     position: relative;
     z-index: 3;
-    /* Fica na camada 3 (acima do filtro) */
 }
-
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
-
 .hero p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
@@ -163,12 +174,9 @@ main {
     font-weight: 600;
     transition: background-color 0.3s ease;
 }
-
 .cta-button:hover {
     background-color: #0056b3;
-    /* Um tom mais escuro de azul */
 }
-
 .cta-button-secondary {
     background-color: transparent;
     color: var(--secondary-blue);
@@ -179,13 +187,16 @@ main {
     font-weight: 600;
     transition: all 0.3s ease;
 }
-
 .cta-button-secondary:hover {
     background-color: var(--secondary-blue);
     color: var(--white);
 }
 
-/* --- Estilos de Seção Padrão --- */
+
+/* ==========================================================================
+  Estilos de Seção Padrão
+==========================================================================
+*/
 .section-padding {
     padding: 4rem 0;
     text-align: center;
@@ -195,13 +206,26 @@ main {
     background-color: var(--light-bg);
 }
 
-.section-padding h2 {
+/* Seção escura (tarja azul) */
+.section-dark {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.section-dark h2 {
+    color: var(--white); /* Garante que o título da seção seja branco */
+}
+.section-dark p {
+    color: #f0f0f0; /* Um tom de branco mais suave para parágrafos */
+}
+
+/* Títulos Padrão da Seção */
+.section-padding h2.section-title {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: var(--primary-blue);
 }
 
-/* --- Grade de Projetos --- */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -209,32 +233,28 @@ main {
     margin-bottom: 2rem;
     text-align: left;
 }
-
 .project-card {
     background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     overflow: hidden;
     transition: transform 0.3s ease;
 }
-
 .project-card:hover {
     transform: translateY(-5px);
 }
-
 .project-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
-
 .project-card h3 {
     padding: 1rem 1.5rem 0.5rem;
     color: var(--primary-blue);
 }
-
 .project-card p {
     padding: 0 1.5rem 1.5rem;
+    color: var(--text-color); /* Garante cor correta no card branco */
 }
 
 /* --- Preview do Blog --- */
@@ -245,30 +265,33 @@ main {
     max-width: 800px;
     margin: 0 auto;
 }
-
 .blog-preview-item h3 {
     color: var(--primary-blue);
     margin-bottom: 0.5rem;
 }
-
 .blog-preview-item a {
     color: var(--secondary-blue);
     font-weight: 600;
     text-decoration: none;
 }
 
-/* --- Rodapé --- */
+
+/* ==========================================================================
+  Rodapé
+==========================================================================
+*/
 footer {
     background-color: var(--primary-blue);
     color: var(--white);
     padding: 2rem 0;
-    text-align: center;
 }
 
 footer .container {
     display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
     justify-content: space-between;
     align-items: center;
+    gap: 1rem; /* Espaçamento entre os itens */
 }
 
 .social-links a {
@@ -277,33 +300,66 @@ footer .container {
     font-weight: 600;
     margin-left: 1rem;
 }
-
 .social-links a:hover {
     text-decoration: underline;
 }
 
-/* --- Responsividade (Celular) --- */
+
+/* ==========================================================================
+  Responsividade (Mobile)
+==========================================================================
+*/
 @media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        justify-content: center;
-        height: auto;
-        padding: 1rem;
+
+    /* --- Correção do Cabeçalho Mobile --- */
+    
+    .mobile-nav-toggle {
+        display: block;
+        z-index: 1001; /* Garante que fique acima de tudo */
+        position: relative; /* Para controlar o z-index */
     }
 
-    .logo {
-        margin-bottom: 1rem;
+    nav {
+        display: none; /* Escondido por padrão */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-blue);
+        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header.nav-active nav {
+        display: flex;
     }
 
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem 1rem;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    nav a {
+        color: var(--white); /* Links brancos no fundo azul */
+        font-size: 1.5rem;
+    }
+
+    header.nav-active .mobile-nav-toggle {
+        color: var(--white); /* Cor do "X" */
+    }
+    header.nav-active .mobile-nav-toggle::before {
+        content: '\2715'; /* Código do caractere "X" */
+    }
+    header:not(.nav-active) .mobile-nav-toggle::before {
+        content: '\2630'; /* Código do caractere "Hambúrguer" */
     }
 
     main {
-        /* Ajuste maior para o header que aumentou */
-        padding-top: 130px;
+        padding-top: var(--header-height); 
     }
 
     .hero h1 {
@@ -316,8 +372,9 @@ footer .container {
     }
 }
 
+
 /* ==========================================================================
-  ESTILOS - PÁGINAS INTERNAS (Sobre, Projetos, etc.)
+  Estilos das Páginas Internas (Sobre, Projetos, etc.)
 ==========================================================================
 */
 
@@ -332,21 +389,28 @@ footer .container {
     color: var(--primary-blue);
     margin: 0;
 }
+.page-header p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 1rem auto 0;
+    color: var(--text-color);
+}
+
+/* MUDANÇA: Garante que texto do page-header fique branco na tarja azul */
+.page-header.section-dark h1,
+.page-header.section-dark p {
+    color: var(--white);
+}
 
 /* --- Seção de Conteúdo Padrão (para textos longos) --- */
 .content-section {
     text-align: left;
-    max-width: 800px;
-    /* Limita a largura do texto para melhor legibilidade */
-    margin: 0 auto;
-    /* Centraliza o bloco de texto */
+    max-width: 800px; /* Limita a largura do texto para melhor legibilidade */
+    margin: 0 auto; /* Centraliza o bloco de texto */
 }
-
-.content-section h2 {
-    text-align: center;
-    /* Mantém os títulos centralizados */
+.content-section h2.section-title {
+    text-align: center; /* Mantém os títulos centralizados */
 }
-
 .content-section p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
@@ -355,33 +419,26 @@ footer .container {
 /* --- Grade da Equipe (Página Sobre) --- */
 .team-grid {
     display: grid;
-    /* Cria 3 colunas em desktop, 2 em tablet, 1 em celular */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     text-align: center;
 }
-
 .team-member-card {
     background-color: var(--white);
 }
-
 .team-member-card img {
     width: 100%;
     max-width: 250px;
-    /* Define um tamanho máximo para a foto */
-    height: auto;
+    height: 250px; /* Garante altura uniforme */
     border-radius: 50%;
-    /* Deixa a foto redonda */
     object-fit: cover;
     margin-bottom: 1rem;
     border: 4px solid var(--light-bg);
 }
-
 .team-member-card h3 {
     color: var(--primary-blue);
     margin-bottom: 0.25rem;
 }
-
 .team-member-card p {
     font-weight: 600;
     color: var(--secondary-blue);
@@ -392,199 +449,133 @@ footer .container {
   ESTILOS - PÁGINA DE PROJETOS
 ==========================================================================
 */
-
-/* Estilo para o parágrafo do cabeçalho da página */
-.page-header p {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 1rem auto 0;
-    color: var(--text-color);
-}
-
-/* Layout Padrão do Projeto (Imagem + Texto) */
 .project-feature {
     display: grid;
     grid-template-columns: 1fr;
-    /* Layout de 1 coluna (padrão mobile) */
     gap: 2rem;
     align-items: center;
 }
-
 .project-feature img {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
 .project-feature-content {
     text-align: left;
 }
-
-.project-feature-content h2 {
+.project-feature-content h2.section-title {
     text-align: left;
-    /* Títulos alinhados à esquerda */
     margin-top: 0;
     font-size: 1.8rem;
 }
-
 .project-feature-content p {
     font-size: 1.1rem;
 }
-
-/* Layout Desktop (telas maiores que 768px)
-  Aqui mudamos para 2 colunas.
-*/
 @media (min-width: 768px) {
     .project-feature {
         grid-template-columns: 1fr 1fr;
-        /* Layout de 2 colunas */
     }
-
-    /* Layout Invertido (classe .reverse)
-      No HTML, a ordem é <img> e depois <texto>.
-      Nesta versão, queremos <texto> e depois <img>.
-      Usamos 'order' para inverter a ordem visual.
-    */
     .project-feature.reverse img {
         order: 2;
-        /* Joga a imagem para a segunda posição */
     }
-
     .project-feature.reverse .project-feature-content {
         order: 1;
-        /* Puxa o texto para a primeira posição */
     }
 }
 
 /* ==========================================================================
-  NOVOS ESTILOS - PÁGINA DO BLOG
+  ESTILOS - PÁGINA DO BLOG
 ==========================================================================
 */
-
 .blog-grid {
     display: grid;
-    /* Grade responsiva: 
-       - auto-fit: cria quantas colunas couberem
-       - minmax(300px, 1fr): cada coluna tem no mínimo 300px e no máximo 1 fração (se distribuem)
-    */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
-
 .blog-card {
     background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     overflow: hidden;
-    /* Garante que a imagem não vaze */
     transition: transform 0.3s ease;
     display: flex;
-    /* Adicionado para layout de card */
     flex-direction: column;
-    /* Organiza os itens em coluna */
 }
-
 .blog-card:hover {
     transform: translateY(-5px);
 }
-
 .blog-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
-
 .blog-card-content {
     padding: 1.5rem;
     text-align: left;
     display: flex;
-    /* Adicionado para layout de card */
     flex-direction: column;
-    /* Organiza os itens em coluna */
     flex-grow: 1;
-    /* Faz esta div crescer para ocupar o espaço */
 }
-
 .blog-card-content h3 {
     color: var(--primary-blue);
     margin-top: 0;
     margin-bottom: 0.5rem;
     font-size: 1.25rem;
 }
-
 .post-meta {
     font-size: 0.9rem;
     color: #777;
     margin-bottom: 1rem;
 }
-
 .blog-card-content p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
 }
-
 .blog-card-content .cta-button-secondary {
     font-size: 0.9rem;
     padding: 0.6rem 1.2rem;
     text-align: center;
     width: fit-content;
-    /* O botão só ocupa o espaço do texto */
     margin-top: auto;
-    /* Mágica: empurra o botão para o final do card */
 }
 
 /* ==========================================================================
-  NOVOS ESTILOS - PÁGINA COMO AJUDAR
+  ESTILOS - PÁGINA COMO AJUDAR
 ==========================================================================
 */
-
 .support-grid {
     display: grid;
-    /* Grade responsiva: 
-       - auto-fit: cria quantas colunas couberem
-       - minmax(300px, 1fr): cada coluna tem no mínimo 300px
-    */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     text-align: center;
-    /* Centraliza o conteúdo dos cards */
 }
-
 .support-card {
     background-color: var(--white);
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 2.5rem 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .support-icon {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     margin-bottom: 1.5rem;
-    /* O placeholder já é redondo, mas se usar uma imagem quadrada, 
-       adicione object-fit: cover; */
 }
-
-.support-card h2 {
+.support-card h2.section-title {
     color: var(--primary-blue);
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
-
 .support-card p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
     flex-grow: 1;
-    /* Faz o parágrafo crescer e empurrar o botão para baixo */
 }
-
-/* Estilo específico para o bloco da chave PIX */
 .donation-info {
     background-color: var(--light-bg);
     border: 1px dashed #ccc;
@@ -593,78 +584,62 @@ footer .container {
     margin-bottom: 1.5rem;
     width: 100%;
 }
-
 .donation-info strong {
     font-size: 0.9rem;
     color: var(--text-color);
 }
-
 .donation-info p {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--primary-blue);
     margin: 0.5rem 0 0 0;
     word-break: break-all;
-    /* Garante que a chave pix não quebre o layout */
     flex-grow: 0;
-    /* Reseta o flex-grow do <p> geral */
 }
-
 .support-card .cta-button,
 .support-card .cta-button-secondary {
     width: 100%;
-    /* Faz os botões ocuparem 100% da largura do card */
     text-align: center;
 }
 
 /* ==========================================================================
-  NOVOS ESTILOS - PÁGINA DE CONTATO
+  ESTILOS - PÁGINA DE CONTATO
 ==========================================================================
 */
-
 .contact-layout {
     display: grid;
     grid-template-columns: 1fr;
-    /* 1 coluna (padrão mobile) */
     gap: 3rem;
     text-align: left;
 }
-
-/* Em telas maiores, divide em 2 colunas */
 @media (min-width: 768px) {
     .contact-layout {
-        /* O formulário (2fr) ocupa o dobro do espaço das infos (1fr) */
         grid-template-columns: 1fr 2fr;
     }
 }
-
-.contact-info h2,
-.contact-form h2 {
+.contact-info h2.section-title,
+.contact-form h2.section-title {
     color: var(--primary-blue);
     margin-top: 0;
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
+    text-align: left; /* Título do formulário à esquerda */
 }
-
 .info-item {
     margin-bottom: 1.5rem;
 }
-
 .info-item strong {
     font-size: 1.1rem;
     color: var(--text-color);
 }
-
 .info-item p {
     margin: 0.25rem 0 0 0;
     font-size: 1.1rem;
 }
-
 .info-item p a {
     color: var(--secondary-blue);
     text-decoration: none;
 }
-
 .info-item p a:hover {
     text-decoration: underline;
 }
@@ -675,34 +650,27 @@ footer .container {
     display: flex;
     flex-direction: column;
 }
-
 .form-group label {
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-color);
 }
-
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 0.8rem 1rem;
     font-size: 1rem;
     font-family: 'Inter', sans-serif;
-    /* Garante a mesma fonte */
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    /* Garante que padding não estoure a largura */
 }
-
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--secondary-blue);
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
 }
-
 .form-group button {
     cursor: pointer;
-    /* Muda o cursor para "mãozinha" */
 }

@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- TÍTULO DA PÁGINA: Altere o título da aba -->
     <title>Nossos Projetos - Projeto Tubarão</title>
-    
-    <!-- Link para o arquivo de estilo (o mesmo de sempre) -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Importa a fonte 'Inter' do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Cabeçalho e Navegação -->
     <header>
         <div class="container">
-            <a href="index.html" class="logo">Projeto Tubarão</a>
+            <!-- REVERSÃO: Logo de volta ao texto -->
+            <a href="index.html" class="logo">
+                Projeto Tubarão
+            </a>
+            <!-- MUDANÇA: Botão Hambúrguer para mobile -->
+            <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Menu"></button>
             <nav>
                 <ul>
-                    <!-- NAVEGAÇÃO: Note que a classe "active" mudou para "Nossos Projetos" -->
                     <li><a href="index.html">Home</a></li>
                     <li><a href="sobre.html">Sobre Nós</a></li>
                     <li><a href="projetos.html" class="active">Nossos Projetos</a></li>
@@ -37,58 +34,62 @@
 
     <main>
         <!-- Cabeçalho da Página -->
-        <section class="page-header section-bg">
+        <!-- MUDANÇA: Adicionada classe .section-dark para quebrar o branco -->
+        <section class="page-header section-dark">
             <div class="container">
                 <h1>Nossos Projetos</h1>
-                <p>Nossas principais linhas de ação para a conservação</p>
+                <p>Do laboratório ao oceano, nossas ações são focadas em resultados práticos para a conservação.</p>
             </div>
         </section>
 
-        <!-- Projeto 1: Pesquisa Científica -->
-        <section class="project-feature container section-padding">
-            <!-- IMAGEM DO PROJETO: Altere o 'src'. (Ideal: 800x500 pixels) -->
-            <img src="https://placehold.co/800x500/003366/FFFFFF?text=Projeto+Pesquisa" alt="Equipe de pesquisa em campo">
-            <div class="project-feature-content">
-                <!-- TÍTULO DO PROJETO -->
-                <h2>Pesquisa Científica</h2>
-                <!-- DESCRIÇÃO DO PROJETO: Altere os parágrafos -->
-                <p>Nossa base de pesquisa foca no monitoramento de populações de tubarões e raias, utilizando telemetria acústica e satelital para entender seus padrões de movimento, uso de habitat e áreas críticas de berçário.</p>
-                <p>Coletamos dados biológicos, realizamos análises genéticas e estudamos o comportamento alimentar para informar estratégias de manejo e conservação eficazes. Este trabalho é fundamental para identificar ameaças e propor soluções baseadas em evidências.</p>
-                <!-- Você pode adicionar listas <ul> <li> aqui se quiser detalhar objetivos -->
-            </div>
-        </section>
-
-        <!-- Projeto 2: Educação Ambiental (Layout Invertido) -->
-        <section class="project-feature reverse section-bg section-padding">
+        <!-- Projeto 1: Pesquisa -->
+        <section class="section-padding">
             <div class="container">
-                <!-- IMAGEM DO PROJETO: Altere o 'src'. (Ideal: 800x500 pixels) -->
-                <img src="https://placehold.co/800x500/007BFF/FFFFFF?text=Projeto+Educação" alt="Palestra de educação ambiental em escola">
-                <div class="project-feature-content">
-                    <!-- TÍTULO DO PROJETO -->
-                    <h2>Educação Ambiental</h2>
-                    <!-- DESCRIÇÃO DO PROJETO: Altere os parágrafos -->
-                    <p>Acreditamos que a conservação só é possível com o envolvimento da sociedade. Nosso programa de educação ambiental visita escolas, universidades e comunidades costeiras, desmistificando a imagem negativa dos tubarões.</p>
-                    <p>Produzimos materiais didáticos, realizamos workshops e promovemos a ciência cidadã, capacitando o público a se tornar um defensor dos oceanos e a compreender o papel vital que os tubarões desempenham no ecossistema marinho.</p>
+                <div class="project-feature">
+                    <!-- REVERSÃO: Imagem de placeholder -->
+                    <img src="https://placehold.co/700x450/007BFF/FFFFFF?text=Projeto+Pesquisa" alt="Pesquisa científica com tubarões">
+                    <div class="project-feature-content">
+                        <h2 class="section-title">Pesquisa Científica</h2>
+                        <p>Utilizamos telemetria acústica e satelital para rastrear os movimentos de tubarões e raias, identificando áreas críticas de alimentação, reprodução e berçário. Esses dados são essenciais para criar zonas de proteção eficazes.</p>
+                        <p>Nossas expedições de campo também coletam amostras de DNA e monitoram a saúde das populações locais, avaliando o impacto da pesca e das mudanças climáticas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projeto 2: Educação -->
+        <!-- MUDANÇA: Adicionada classe .section-dark para quebrar o branco -->
+        <section class="section-padding section-dark">
+            <div class="container">
+                <div class="project-feature reverse">
+                    <!-- REVERSÃO: Imagem de placeholder -->
+                    <img src="https://placehold.co/700x450/EEEEEE/333333?text=Projeto+Educação" alt="Educação ambiental em comunidade costeira">
+                    <div class="project-feature-content">
+                        <h2 class="section-title">Educação Ambiental</h2>
+                        <p>Acreditamos que ninguém protege o que não conhece. Nossos programas de educação ambiental levam o oceano para salas de aula, centros comunitários e eventos públicos. </p>
+                        <p>Através de palestras, oficinas e material didático, desmistificamos a imagem dos tubarões e ensinamos sobre seu papel crucial no equilíbrio do ecossistema marinho, formando uma nova geração de guardiões do oceano.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Projeto 3: Políticas Públicas -->
-        <section class="project-feature container section-padding">
-             <!-- IMAGEM DO PROJETO: Altere o 'src'. (Ideal: 800x500 pixels) -->
-            <img src="https://placehold.co/800x500/0055A4/FFFFFF?text=Projeto+Políticas" alt="Reunião sobre políticas públicas">
-            <div class="project-feature-content">
-                <!-- TÍTULO DO PROJETO -->
-                <h2>Políticas Públicas</h2>
-                <!-- DESCRIÇÃO DO PROJETO: Altere os parágrafos -->
-                <p>Traduzimos nossa ciência em ação política. Trabalhamos ativamente com órgãos governamentais, legisladores e outras ONGs para influenciar a criação e implementação de leis de proteção marinha.</p>
-                <p>Nossa atuação inclui a participação em conselhos, a elaboração de notas técnicas e a defesa da expansão de áreas marinhas protegidas, garantindo que a conservação de tubarões e raias seja uma prioridade nacional.</p>
+        <section class="section-padding">
+            <div class="container">
+                <div class="project-feature">
+                    <!-- REVERSÃO: Imagem de placeholder -->
+                    <img src="https://placehold.co/700x450/007BFF/FFFFFF?text=Projeto+Políticas" alt="Reunião para discussão de políticas públicas">
+                    <div class="project-feature-content">
+                        <h2 class="section-title">Políticas Públicas e Advocacy</h2>
+                        <p>A ciência de qualidade é a nossa ferramenta de mudança. Subsidir tomadores de decisão com dados robustos é o núcleo do nosso trabalho de advocacy.</p>
+                        <p>Atuamos ativamente em conselhos de gestão, audiências públicas e grupos de trabalho para defender a criação de novas unidades de conservação marinhas e o aprimoramento das leis de pesca, garantindo que a voz do oceano seja ouvida.</p>
+                    </div>
+                </div>
             </div>
         </section>
-        
+
     </main>
 
-    <!-- Rodapé (O mesmo de sempre) -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Projeto Tubarão. Todos os direitos reservados.</p>
@@ -98,5 +99,6 @@
         </div>
     </footer>
 
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

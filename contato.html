@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- TÍTULO DA PÁGINA: Altere o título da aba -->
     <title>Contato - Projeto Tubarão</title>
-    
-    <!-- Link para o arquivo de estilo -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Importa a fonte 'Inter' do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Cabeçalho e Navegação -->
     <header>
         <div class="container">
-            <a href="index.html" class="logo">Projeto Tubarão</a>
+            <!-- REVERSÃO: Logo de volta ao texto -->
+            <a href="index.html" class="logo">
+                Projeto Tubarão
+            </a>
+            <!-- MUDANÇA: Botão Hambúrguer para mobile -->
+            <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Menu"></button>
             <nav>
                 <ul>
-                    <!-- NAVEGAÇÃO: Note que a classe "active" mudou para "Contato" -->
                     <li><a href="index.html">Home</a></li>
                     <li><a href="sobre.html">Sobre Nós</a></li>
                     <li><a href="projetos.html">Nossos Projetos</a></li>
@@ -37,7 +34,8 @@
 
     <main>
         <!-- Cabeçalho da Página -->
-        <section class="page-header section-bg">
+        <!-- MUDANÇA: Adicionada classe .section-dark para quebrar o branco -->
+        <section class="page-header section-dark">
             <div class="container">
                 <h1>Fale Conosco</h1>
                 <p>Adoraríamos ouvir você. Envie suas dúvidas, sugestões ou parcerias.</p>
@@ -45,84 +43,64 @@
         </section>
 
         <!-- Layout de Contato (Formulário + Informações) -->
-        <section class="container section-padding">
-            <div class="contact-layout">
-                
-                <!-- Coluna 1: Informações de Contato -->
-                <div class="contact-info">
-                    <h2>Informações</h2>
-                    <p>Entre em contato conosco diretamente ou siga-nos nas redes sociais.</p>
+        <section class="section-padding">
+            <div class="container">
+                <div class="contact-layout">
                     
-                    <!-- INFO ITEM: Altere o e-mail -->
-                    <div class="info-item">
-                        <strong>E-mail:</strong>
-                        <p><a href="mailto:contato@projetotubarao.org">contato@projetotubarao.org</a></p>
-                    </div>
-
-                    <!-- INFO ITEM: Adicione seu @ se quiser -->
-                    <div class="info-item">
-                        <strong>Instagram:</strong>
-                        <p><a href="https://www.instagram.com/projetotubarao/" target="_blank">@projetotubarao</a></p>
-                    </div>
-
-                    <!-- INFO ITEM: Adicione um local se for relevante -->
-                    <div class="info-item">
-                        <strong>Localização:</strong>
-                        <p>Ubatuba - SP, Brasil</p>
-                    </div>
-                </div>
-
-                <!-- Coluna 2: Formulário de Contato -->
-                <div class="contact-form">
-                    <h2>Envie uma Mensagem</h2>
-
-                    <!-- 
-                      *************************************************************************
-                      ** ATENÇÃO: FAÇA O FORMULÁRIO FUNCIONAR AQUI **
-                      *************************************************************************
-                      1. Crie uma conta gratuita no https://formspree.io/
-                      2. Crie um novo formulário e pegue seu link/endpoint.
-                      3. Substitua O LINK ABAIXO pelo seu link do Formspree.
-                      *************************************************************************
-                    -->
-                    <form action="https://formspree.io/f/mzzypazr" method="POST">
+                    <!-- Coluna 1: Informações de Contato -->
+                    <div class="contact-info">
+                        <h2 class="section-title">Informações</h2>
+                        <p>Entre em contato conosco diretamente ou siga-nos nas redes sociais.</p>
                         
-                        <!-- Campo Nome -->
-                        <div class="form-group">
-                            <label for="name">Nome Completo</label>
-                            <input type="text" id="name" name="name" required>
+                        <div class="info-item">
+                            <strong>E-mail:</strong>
+                            <p><a href="mailto:contato@projetotubarao.org">contato@projetotubarao.org</a></p>
                         </div>
 
-                        <!-- Campo E-mail -->
-                        <div class="form-group">
-                            <label for="email">Seu E-mail</label>
-                            <input type="email" id="email" name="email" required>
+                        <div class="info-item">
+                            <strong>Instagram:</strong>
+                            <p><a href="https://www.instagram.com/projetotubarao/" target="_blank">@projetotubarao</a></p>
                         </div>
 
-                        <!-- Campo Assunto -->
-                        <div class="form-group">
-                            <label for="subject">Assunto</label>
-                            <input type="text" id="subject" name="subject" required>
+                        <div class="info-item">
+                            <strong>Localização:</strong>
+                            <p>Ubatuba - SP, Brasil</p>
                         </div>
+                    </div>
 
-                        <!-- Campo Mensagem -->
-                        <div class="form-group">
-                            <label for="message">Mensagem</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
+                    <!-- Coluna 2: Formulário de Contato -->
+                    <div class="contact-form">
+                        <h2 class="section-title">Envie uma Mensagem</h2>
+                        
+                        <form action="https://formspree.io/f/SEU-ID-UNICO-VEM-AQUI" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nome Completo</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Seu E-mail</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Assunto</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensagem</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="cta-button">Enviar Mensagem</button>
+                            </div>
+                        </form>
+                    </div>
 
-                        <!-- Botão Enviar -->
-                        <div class="form-group">
-                            <button type="submit" class="cta-button">Enviar Mensagem</button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </section>
         
     </main>
 
-    <!-- Rodapé (O mesmo de sempre) -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Projeto Tubarão. Todos os direitos reservados.</p>
@@ -132,5 +110,6 @@
         </div>
     </footer>
 
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
